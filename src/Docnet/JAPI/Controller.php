@@ -48,6 +48,19 @@ abstract class Controller
     protected $str_request_body_json = null;
 
     /**
+     * @var null|string The RESTful Resource ID if appropriate
+     */
+    protected $str_resource_id;
+
+    /**
+     * @param null|string $str_resource_id The RESTful Resource ID if appropriate
+     */
+    public function __construct($str_resource_id = null)
+    {
+        $this->str_resource_id = $str_resource_id;
+    }
+
+    /**
      * Default, empty pre dispatch
      *
      * Usually overridden for authentication
